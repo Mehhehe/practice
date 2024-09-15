@@ -1,0 +1,12 @@
+body{
+    background-color: black
+    ;
+}
+p,h2,h1,li {
+    color: white;
+}
+
+table, img{
+
+    text-align: center;
+}
