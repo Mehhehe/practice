@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//CSS/registration.css">
+    <title>Dark Themed Registration Form</title>
+</head>
+
+<body>
+    <form id="registrationForm">
+        <h2>Register Here</h2>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstNameInput" placeholder="Enter your first name" required>
+
+        <label for="middleName">Middle Name:</label>
+        <input type="text" id="middleNameInput" placeholder="Enter your middle name">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastNameInput" placeholder="Enter your last name" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dobInput" required>
+
+        <label for="gender">Gender:</label>
+        <select id="genderInput" required>
+            <option value="" disabled selected>Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="aboutMe">About Me:</label>
+        <textarea id="aboutMeInput" rows="4" placeholder="Tell us about yourself..." required></textarea>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            
+            const firstName = document.getElementById('firstNameInput').value;
+            const middleName = document.getElementById('middleNameInput').value;
+            const lastName = document.getElementById('lastNameInput').value;
+            const dob = document.getElementById('dobInput').value;
+            const gender = document.getElementById('genderInput').value;
+            const aboutMe = document.getElementById('aboutMeInput').value;
+
+            
+            localStorage.setItem('firstName', firstName);
+            localStorage.setItem('middleName', middleName);
+            localStorage.setItem('lastName', lastName);
+            localStorage.setItem('dob', dob);
+            localStorage.setItem('gender', gender);
+            localStorage.setItem('aboutMe', aboutMe);
+
+            
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>
